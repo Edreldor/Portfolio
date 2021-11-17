@@ -176,12 +176,13 @@ aside > ul > li > a:hover > svg {
     height: 6em;
     display: grid;
     place-items: center;
+    color: var(--clr-neon--pink);
     border: .25em solid var(--clr-neon--pink);
     border-radius: 50%;
     background-color: var(--clr-bg--blue);
     box-shadow:
     0 0 1em var(--clr-neon--pink),
-    inset 0 0 1em var(--clr-neon--pink);  ;
+    inset 0 0 1em var(--clr-neon--pink);
 }
 
 .neon-pannel > ul > li > a >svg {
@@ -208,8 +209,8 @@ aside > ul > li > a:hover > svg {
         box-shadow:
             0 0 .5em #fff,
             inset 0 0 .5em #fff,
-            0 0 2em var(--clr-neon--blue),
-            inset 0 0 2em var(--clr-neon--blue);      
+            0 0 2em currentColor,
+            inset 0 0 2em currentColor;      
     }
     20%, 21.5%, 55% {        
         box-shadow: none;
