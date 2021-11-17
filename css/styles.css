@@ -10,8 +10,8 @@
     --logo-height: 3em;
     --logo-heihgt-hover: 3.5em;
 
-    --ftsize-MainTitle: 5rem;
-    --ftsize-h2: 2rem;
+    --ftsize-MainTitle: 5em;
+    --ftsize-h2: 2em;
 }
 
 *,
@@ -123,6 +123,7 @@ aside > ul > li > a:hover > svg {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    font-size: clamp(.5rem, 1vw, 2rem);
 }
 
 .neon-pannel {
@@ -213,7 +214,7 @@ aside > ul > li > a:hover > svg {
 }
 
 .neon-pannel > ul > li > a {
-    padding: 10px;
+    padding: .7em;
 }
 
 .neon-pannel > ul > li > a >svg {
@@ -266,7 +267,7 @@ aside > ul > li > a:hover > svg {
 }
 
 .neon-button {
-    font-size: 2rem;
+    font-size: 2em;
     width: 8em;
     height: 2em;
     display: inline-block;
