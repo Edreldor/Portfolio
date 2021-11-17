@@ -1,0 +1,306 @@
+:root {
+    --clr-neon--blue: #14D8FF;
+    --clr-neon--pink: #FF14BD;
+    --clr-neon: var(--clr-neon--blue);
+    --clr-bg--blue: #242031;
+    --clr-bg--purple: #31202B;
+    --clr-bg: var(--clr-bg--blue);
+    --clr-h1-color: #f40;
+
+    --logo-height: 3em;
+    --logo-heihgt-hover: 3.5em;
+
+    --ftsize-MainTitle: 5rem;
+    --ftsize-h2: 2rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--clr-bg);
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Balsamiq Sans", cursive;
+    color: var(--clr-neon);
+    position: relative;
+}
+
+/*
+-------------------------------------------------------------------------
+---------------------------   ASIDE DESIGN    ---------------------------
+-------------------------------------------------------------------------
+*/
+
+aside {
+    display: none;
+
+    position: fixed;
+    left: 1.5em;
+    bottom: 1.5em;
+    border: var(--clr-neon--blue) solid .25em;
+    border-radius: 1em;
+    padding: .5em;
+    box-shadow: 
+        0 0 .5em var(--clr-neon),
+        inset 0 0 .5em var(--clr-neon);
+    opacity: .7;
+    transition: box-shadow 100ms ease-in-out,
+        opacity 100ms ease-in-out;
+    z-index: 10;
+}
+
+aside:hover {
+    opacity: 1;
+    box-shadow: 
+        0 0 1em var(--clr-neon),
+        inset 0 0 1em var(--clr-neon)
+        ;
+}
+
+aside > ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+aside > ul > li {
+    list-style: none;
+    height: calc(var(--logo-heihgt-hover) + .75em);
+    width: calc(var(--logo-heihgt-hover) + .5em);
+    display: grid;
+    place-items: center;
+}
+
+aside > ul > li > a {
+    padding: .25em;
+}
+
+aside > ul > li > a >svg {
+    height: var(--logo-height);
+    width: var(--logo-height);
+    fill: var(--clr-neon--blue);
+    opacity: .7;
+    transition: opacity ease-in-out 100ms,
+        height ease-in-out 100ms,
+        width ease-in-out 100ms;
+}
+
+.fillBlue {
+    fill: var(--clr-neon--blue);
+}
+
+aside > ul > li > a:hover > svg {
+    opacity: 1;
+    height: var(--logo-heihgt-hover);
+    width: var(--logo-heihgt-hover);
+}
+
+
+/*
+-------------------------------------------------------------------------
+---------------------------   INTRO SECTION    --------------------------
+-------------------------------------------------------------------------
+*/
+
+.intro {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.neon-pannel {
+    border: .25em solid var(--clr-neon--blue);
+    border-radius: 2em;
+    padding: 2em 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: flicker 5s infinite;
+    margin: 2em;
+    position: relative;
+}
+
+.intro > div >h1 {
+    font-size: var(--ftsize-MainTitle);
+    color: var(--clr-neon--pink);
+    text-transform: uppercase;
+    margin: 0;
+    text-shadow: 0 0 .05em var(--clr-neon--pink),
+        0 0 .25em var(--clr-neon--pink),
+        0 0 .5em var(--clr-neon--pink);
+    text-align: center;
+}
+
+.intro > div > h2 {
+    font-size: var(--ftsize-h2);
+    margin: 0 0 1.5em 0;
+    text-align: center;
+}
+
+.neon-pannel > ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: absolute;
+    height: 6em;
+    width: 75%;
+    bottom: -3em;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.neon-pannel > ul > li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 6em;
+    height: 6em;
+    display: grid;
+    place-items: center;
+    border: .25em solid var(--clr-neon--pink);
+    border-radius: 50%;
+    background-color: var(--clr-bg--blue);
+    box-shadow:
+    0 0 1em var(--clr-neon--pink),
+    inset 0 0 1em var(--clr-neon--pink);  ;
+}
+
+.neon-pannel > ul > li > a >svg {
+    height: var(--logo-height);
+    width: var(--logo-height);
+    fill: var(--clr-neon--pink);
+    opacity: .7;
+    transition: opacity ease-in-out 100ms,
+        height ease-in-out 100ms,
+        width ease-in-out 100ms;
+}
+
+
+.neon-pannel > ul > li > a:hover > svg {
+    opacity: 1;
+    height: var(--logo-heihgt-hover);
+    width: var(--logo-heihgt-hover);
+}
+
+
+@keyframes flicker {
+    
+    0%, 19%, 21%, 22%, 25%, 54%, 56%, 100% {  
+        box-shadow:
+            0 0 .5em #fff,
+            inset 0 0 .5em #fff,
+            0 0 2em var(--clr-neon--blue),
+            inset 0 0 2em var(--clr-neon--blue);      
+    }
+    20%, 21.5%, 55% {        
+        box-shadow: none;
+    }    
+}
+
+/*
+-------------------------------------------------------------------------
+---------------------------   NEON BUTTON    ----------------------------
+-------------------------------------------------------------------------
+*/
+
+
+.intro-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 2em;
+}
+
+.neon-button {
+    font-size: 2rem;
+    width: 8em;
+    height: 2em;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--clr-neon);
+    background-color: transparent;
+    border: var(--clr-neon) .125em solid;
+    padding: .25em 1em;
+    margin: 1em;
+    border-radius: .25em;
+    position: relative;
+
+    text-shadow: 
+        0 0 .125em hsl(0 0% 100% / .25),
+        0 0 .125em currentColor;
+
+    box-shadow: 
+        0 0 .5em var(--clr-neon),
+        inset 0 0 .5em var(--clr-neon)
+        ;
+
+}
+
+.neon-button::before {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    top: 150%;
+    left: -5%;
+    width: 110%;
+    height: 50%;
+    background: var(--clr-neon);
+
+    transform: perspective(3em) rotateX(40deg) translateY(50%);
+    filter: blur(1em);
+    opacity: .7;
+}
+
+.neon-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: var(--clr-neon);
+    box-shadow: 0 0 2em .5em var(--clr-neon);
+    opacity: 0;
+    transition: opacity 100ms ease-in-out,
+        background-color 100ms ease-in-out;
+
+}
+
+.neon-button:hover,
+.neon-button:focus {
+    color: var(--clr-bg);
+    text-shadow: none;
+}
+
+.neon-button:hover::after,
+.neon-button:focus::after {
+    opacity: 1;
+}
+
+.neon-button:hover::before,
+.neon-button:focus::before {
+    opacity: 1;
+}
