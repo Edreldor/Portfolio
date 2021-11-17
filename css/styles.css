@@ -138,6 +138,32 @@ aside > ul > li > a:hover > svg {
     position: relative;
 }
 
+.neon-pannel::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+    z-index: -10;
+    height: 11em;
+    border-radius: .5em;
+    width: .5em;
+    background-color: #101010;
+    transform: translateY(100%);
+}
+
+.neon-pannel::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    z-index: -10;
+    height: 11em;
+    border-radius: .5em;
+    width: .5em;
+    background-color: #101010;
+    transform: translateY(100%);
+}
+
 .intro > div >h1 {
     font-size: var(--ftsize-MainTitle);
     color: var(--clr-neon--pink);
