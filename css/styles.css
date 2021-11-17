@@ -186,6 +186,10 @@ aside > ul > li > a:hover > svg {
     inset 0 0 1em var(--clr-neon--pink);
 }
 
+.neon-pannel > ul > li > a {
+    padding: 10px;
+}
+
 .neon-pannel > ul > li > a >svg {
     height: var(--logo-height);
     width: var(--logo-height);
@@ -194,6 +198,7 @@ aside > ul > li > a:hover > svg {
     transition: opacity ease-in-out 100ms,
         height ease-in-out 100ms,
         width ease-in-out 100ms;
+    filter: drop-shadow(0em 0em .1em var(--clr-neon--pink));
 }
 
 
@@ -305,4 +310,58 @@ aside > ul > li > a:hover > svg {
 .neon-button:hover::before,
 .neon-button:focus::before {
     opacity: 1;
+}
+
+
+.perpective-next {
+    cursor: pointer;
+    width: 10em;
+    height: 10em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+  }
+  
+  .perpective-next > svg {
+    position: absolute;
+    width: 80%;
+    aspect-ratio: 1;
+    fill: var(--clr-neon--pink);
+    opacity: .7;
+    transition: opacity ease-in-out 100ms;
+    filter: drop-shadow(0em 0em .1em var(--clr-neon--pink))
+        drop-shadow(0em 0em .25em var(--clr-neon--pink));
+  }
+
+  .perpective-next:hover > svg {
+      opacity: 1;
+  }
+  
+  .arrowOne {
+    animation: animateArrowOne 3s infinite;
+  }
+  
+  .arrowTwo {
+    animation: animateArrowTwo 3s infinite;
+  }
+  
+@keyframes animateArrowOne {
+    0%, 40%, 100% {
+      transform: perspective(10em) rotateX(45deg) rotateZ(180deg) translateY(50%);
+    }
+    20% {
+      transform: perspective(10em) rotateX(45deg) rotateZ(180deg) translateY(20%)
+    }
+}
+  
+@keyframes animateArrowTwo {
+    0%, 5%, 45%, 100% {
+      transform: perspective(10em) rotateX(45deg) rotateZ(180deg) translateY(0%);
+    }
+    25% {
+      transform: perspective(10em) rotateX(45deg) rotateZ(180deg) translateY(-30%)
+    }
 }
